@@ -1,5 +1,5 @@
 {{- /*
-Validation checks that cause Helm to fail with a clear message
+Executed validations that cause Helm to fail with clear messages
 */ -}}
 
 {{- if and .Values.storage.local.enabled (eq .Values.database.type "default") -}}
