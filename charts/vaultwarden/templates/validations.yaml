@@ -1,7 +1,4 @@
-{{- /*
-Executed validations that cause Helm to fail with clear messages
-*/ -}}
-
-{{- if and .Values.storage.local.enabled (eq .Values.database.type "default") -}}
-{{- fail "Invalid configuration: storage.local.enabled=true cannot be used with SQLite (database.type=default). Use an external database (mysql or postgresql)." -}}
-{{- end -}}
+# This file intentionally renders no resources. It only triggers validations.
+# The include below executes the checks defined in templates/_validation.tpl.
+# If an invalid combination is set, the `fail` function will abort rendering.
+# {{- include "vaultwarden.validations" . -}}
